@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#090914" />
+  <title>VibeVault — your little corner of the internet</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="VibeVault home"><span class="brand-mark">✦</span> vibe<span>vault</span></a>
+    <div class="top-actions"><span class="live-dot"></span><span class="today-label" id="todayLabel">YOUR SPACE, YOUR PACE</span><button class="icon-btn" id="themeButton" title="Toggle glow intensity" aria-label="Toggle glow intensity">☼</button></div>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="sparkle">✧</span> YOUR PERSONAL UNIVERSE</p>
+        <h1>How are you<br/><span>really feeling?</span></h1>
+        <p class="hero-sub">A tiny corner to check in with yourself, collect your thoughts, and romanticize the little things.</p>
+        <div class="date-chip"><span>◷</span> <span id="currentDate"></span></div>
+      </div>
+      <div class="hero-orbit" aria-hidden="true">
+        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="orbit orbit-c"></div>
+        <div class="planet">✦</div><span class="orbit-star star-a">✧</span><span class="orbit-star star-b">✦</span><span class="orbit-star star-c">·</span>
+      </div>
+    </section>
+
+    <section class="stats-grid">
+      <article class="stat-card"><span class="stat-icon pink">♡</span><div><p class="stat-label">CHECK-INS</p><strong id="checkinCount">0</strong><small>moments with yourself</small></div></article>
+      <article class="stat-card"><span class="stat-icon purple">✎</span><div><p class="stat-label">JOURNAL NOTES</p><strong id="noteCount">0</strong><small>thoughts you've saved</small></div></article>
+      <article class="stat-card"><span class="stat-icon blue">✧</span><div><p class="stat-label">CURRENT STREAK</p><strong id="streakCount">0 <em>days</em></strong><small>show up for yourself</small></div></article>
+    </section>
+
+    <div class="content-grid">
+      <section class="panel mood-panel">
+        <div class="section-heading"><div><p class="eyebrow">01 / MOOD CHECK</p><h2>Pick your vibe</h2></div><span class="heading-decoration">✳</span></div>
+        <p class="muted">No pressure to feel a certain way. Just choose what fits today.</p>
+        <div class="mood-grid" id="moodGrid">
+          <button class="mood-option" data-mood="Happy" data-emoji="☀️"><span>☀️</span><b>Happy</b><small>bright energy</small></button>
+          <button class="mood-option" data-mood="Calm" data-emoji="🌊"><span>🌊</span><b>Calm</b><small>soft & steady</small></button>
+          <button class="mood-option" data-mood="Dreamy" data-emoji="🌙"><span>🌙</span><b>Dreamy</b><small>head in clouds</small></button>
+          <button class="mood-option" data-mood="Low" data-emoji="🌧️"><span>🌧️</span><b>Low</b><small>taking it slow</small></button>
+          <button class="mood-option" data-mood="Anxious" data-emoji="🫧"><span>🫧</span><b>Anxious</b><small>one breath at a time</small></button>
+          <button class="mood-option" data-mood="Focused" data-emoji="⚡"><span>⚡</span><b>Focused</b><small>in my zone</small></button>
+        </div>
+        <div class="mood-footer"><span id="moodStatus">Your feelings are welcome here.</span><button class="primary-btn" id="saveMood" disabled>Save check-in <span>↗</span></button></div>
+        <div class="history-wrap"><div class="mini-heading"><span>RECENT CHECK-INS</span><span>YOUR LAST 5</span></div><div id="moodHistory" class="history-list"><p class="empty-state">Your mood history will show up here.</p></div></div>
+      </section>
+
+      <div class="side-column">
+        <section class="panel quote-panel">
+          <div class="section-heading"><div><p class="eyebrow">02 / A LITTLE REMINDER</p><h2>Words to keep</h2></div><span class="quote-mark">“</span></div>
+          <blockquote id="quoteText">You don't have to bloom every day. Some days, growing roots is enough.</blockquote>
+          <p class="quote-author" id="quoteAuthor">— A gentle reminder</p>
+          <div class="quote-actions"><button class="text-btn" id="newQuote">↻ Another thought</button><button class="icon-btn small" id="copyQuote" title="Copy quote" aria-label="Copy quote">⧉</button></div>
+        </section>
+
+        <section class="panel journal-panel">
+          <div class="section-heading"><div><p class="eyebrow">03 / BRAIN DUMP</p><h2>Little thoughts</h2></div><span class="journal-icon">✎</span></div>
+          <p class="muted">Get it out of your head and onto the page.</p>
+          <form id="journalForm">
+            <label class="sr-only" for="noteTitle">Note title</label><input id="noteTitle" maxlength="60" placeholder="Give this thought a title…" />
+            <label class="sr-only" for="noteBody">Your thought</label><textarea id="noteBody" rows="3" maxlength="1200" placeholder="What's on your mind? No one else has to see this."></textarea>
+            <div class="form-bottom"><span id="charCount">0 / 1200</span><button class="primary-btn" type="submit">Save note <span>＋</span></button></div>
+          </form>
+          <div id="notesList" class="notes-list"><p class="empty-state">Your saved thoughts will live here.</p></div>
+        </section>
+      </div>
+    </div>
+
+    <section class="bottom-note"><span class="bottom-star">✦</span><p><strong>A note from you to you</strong><br/>You are allowed to be a work in progress and still be proud of yourself.</p><span class="bottom-scribble">made for your mind ♡</span></section>
+    <footer><span>VIBEVAULT <span class="footer-dot">●</span> YOUR PERSONAL SPACE</span><span>Stored on this device · Made with <span class="heart">♥</span></span></footer>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
